@@ -1,130 +1,179 @@
-﻿![NodeJS logo](logo.png)
+# sabat-MERN-GCP 🌐
 
-## Node API
+![Node.js](https://img.shields.io/badge/Node.js-8CC84B?style=flat-square&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) ![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=google-cloud&logoColor=white)
 
-### Description
+Welcome to the **sabat-MERN-GCP** repository! This project is an API Rest built using NodeJS, Express, and MongoDB. It serves as a boilerplate for developing applications on Google Cloud Platform (GCP).
 
-Node API is production ready and open source project in Node, Express and MongoDB
+## Table of Contents
 
-### Documentation
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [API Documentation](#api-documentation)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-Swagger Docs https://rest-api-node-413916.uc.r.appspot.com/docs/
+## Introduction
 
-### Support
+The **sabat-MERN-GCP** project aims to simplify the process of building RESTful APIs with a focus on scalability and performance. It leverages the strengths of the MERN stack, along with the robust capabilities of Google Cloud Platform. This makes it an ideal choice for developers looking to create efficient applications.
 
-This application is hosted on Google Cloud Platfom and serve a bunch of AJAX requests to give and manipulate data from database and give a support to test front end applications
+## Features
 
-### Servers
+- RESTful API architecture
+- Built with Node.js and Express
+- MongoDB for data storage
+- Easy deployment on Google Cloud Platform
+- Swagger UI for API documentation
+- PM2 for process management
+- Scalable and efficient design
 
-| Server     | Description                           | Api Url                                       |
-| ---------- | ------------------------------------- | --------------------------------------------- |
-| App Engine | Rest API Node - Google Cloud Platform | https://rest-api-node-413916.uc.r.appspot.com |
+## Technologies Used
 
-### Showcase
+- **Node.js**: JavaScript runtime built on Chrome's V8 engine.
+- **Express**: Fast, unopinionated, minimalist web framework for Node.js.
+- **MongoDB**: NoSQL database for storing data in JSON-like documents.
+- **Google Cloud Platform**: Suite of cloud computing services.
+- **PM2**: Advanced, production process manager for Node.js applications.
+- **Swagger**: API documentation framework.
 
-| Application                                | Code (GitHub)                                          | Server  |
-| ------------------------------------------ | ------------------------------------------------------ | ------- |
-| https://typescript-angular4.herokuapp.com/ | https://github.com/renanlopescoder/typescript-angular4 | staging |
-| http://mobx-react.herokuapp.com/           | https://github.com/renanlopescoder/mobx-react          | staging |
-| http://vue-clash.herokuapp.com/            | https://github.com/renanlopescoder/vue                 | staging |
+## Getting Started
 
-## Routes
+To get started with this project, follow these steps:
 
-#### Projects
+1. **Clone the Repository**
 
-| URL                                                               | Collection | Method | Parameters | Response                                | Action                                      |
-| ----------------------------------------------------------------- | ---------- | ------ | ---------- | --------------------------------------- | ------------------------------------------- |
-| https://rest-api-node-413916.uc.r.appspot.com/projects            | projects   | get    | Nothing    | JSON with Array                         | Get a list of projects in the database      |
-| https://rest-api-node-413916.uc.r.appspot.com/projects/create     | projects   | post   | JSON       | JSON                                    | Add JSON into the database                  |
-| https://rest-api-node-413916.uc.r.appspot.com/projects/update/:id | projects   | put    | id, JSON   | Update the document with sent JSON data |
-| https://rest-api-node-413916.uc.r.appspot.com/projects/select/:id | projects   | get    | id         | JSON                                    | Return the document, related to the sent id |
-| https://rest-api-node-413916.uc.r.appspot.com/projects/delete/:id | projects   | delete | id         | status 200                              | Delete the document, related to the sent id |
+   Use the following command to clone the repository:
 
-#### Users
+   ```bash
+   git clone https://github.com/joaovlmxs/sabat-MERN-GCP.git
+   ```
 
-| URL                                                            | Collection | Method | Parameters | Response        | Action                                      |
-| -------------------------------------------------------------- | ---------- | ------ | ---------- | --------------- | ------------------------------------------- |
-| https://rest-api-node-413916.uc.r.appspot.com/users            | users      | get    | Nothing    | JSON with Array | Get a list of users in the database         |
-| https://rest-api-node-413916.uc.r.appspot.com/users/create     | users      | post   | JSON       | JSON            | Add JSON into the database                  |
-| https://rest-api-node-413916.uc.r.appspot.com/users/update/:id | users      | put    | id         | JSON            | Update the document with sent JSON data     |
-| https://rest-api-node-413916.uc.r.appspot.com/users/select/:id | users      | get    | id         | JSON            | Return the document, related to the sent id |
-| https://rest-api-node-413916.uc.r.appspot.com/users/delete/:id | users      | delete | id         | status 200      | Delete the document, related to the sent id |
+2. **Navigate to the Project Directory**
 
-## Collections
+   ```bash
+   cd sabat-MERN-GCP
+   ```
 
-#### Schema Project (projects)
+3. **Install Dependencies**
 
-| Name         | Description                               | Type   |
-| ------------ | ----------------------------------------- | ------ |
-| project      | project name                              | String |
-| technologies | project technologies                      | String |
-| description  | project description                       | String |
-| demoLink     | demo link                                 | String |
-| githubLink   | GitHub link                               | String |
-| author       | author's name                             | String |
-| authorLink   | links to author (website, linkedin)       | String |
-| project      | project name                              | String |
-| status       | project status (Development / Production) | String |
+   Use npm to install the required packages:
 
-#### Schema User (users)
+   ```bash
+   npm install
+   ```
 
-| Name     | Description          | Type   |
-| -------- | -------------------- | ------ |
-| username | user name            | String |
-| password | user password (hash) | String |
-| email    | user mail            | String |
-| photo    | user photo           | String |
-| nickname | user nickname        | String |
+4. **Set Up Environment Variables**
 
-## API
+   Create a `.env` file in the root directory and add your environment variables. Here’s an example:
 
-| Technology    | Description             | Link               |
-| ------------- | ----------------------- | ------------------ |
-| AppEngine     | Google Cloud Platform   | [cloud.google.com] |
-| MongoDB Atlas | MongoDB database server | [mongodb.com]      |
-| GitHub        | Version Controlling     | [github.com]       |
+   ```plaintext
+   MONGODB_URI=your_mongodb_connection_string
+   PORT=your_port_number
+   ```
 
-## API Directories
+5. **Start the Application**
 
-- Public Routes `./src/routes/public`
-- Private Routes `./src/routes/private`
-- Models `./src/app/Models`
-- Controllers `./src/app/Controllers`
-- Services `./src/app/Services`
-- Config consign and express `./src/config/express.js`
-- Server configuration and application startup `./server.js`
+   Use the following command to start the application:
 
-## Configuring the API locally
+   ```bash
+   npm start
+   ```
 
-- Download or clone the project access the project folder with the terminal and execute the CLI <code>npm install</code>
-- Create your .env file with the following configuration
-  - WORKERS: How many workers you need
-  - AUTO_SCALE: When enabled will create workers by CPU Eg.: CPU \* WORKERS
-  - DATABASE_URL: Your database URL
-  - AUTH_ROUNDS and AUTH_SECRET: Those are used for authentication and verification
+## API Documentation
+
+To explore the API endpoints, visit the Swagger UI. You can access it at:
 
 ```
-WORKERS=1
-AUTO_SCALE=true
-DATABASE_URL=mongodb+srv://<user>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority
-AUTH_ROUNDS=15
-AUTH_SECRET=docssecret
+http://localhost:your_port_number/api-docs
 ```
 
-- Run the server <code>npm start</code>
-- Access in your browser <a href="http://localhost:8080/projects">http://localhost:8080/projects</a>
-- For deployment is important to update app.yaml to your service_account and can be found on your GCP
+You can also check the [Releases](https://github.com/joaovlmxs/sabat-MERN-GCP/releases) section for the latest updates and downloadable files.
 
-## API Dependencies
+## Deployment
 
-- Dependency express - <a href="https://www.npmjs.com/package/express">https://www.npmjs.com/package/express</a>
-- Dependency body-parser - <a href="https://www.npmjs.com/package/body-parser">https://www.npmjs.com/package/body-parser</a>
-- Dependency cors - <a href="https://www.npmjs.com/package/cors">https://www.npmjs.com/package/cors</a>
-- Dependency consign - <a href="https://www.npmjs.com/package/consign">https://www.npmjs.com/package/consign</a>
-- Dependency mongoose - <a href="https://www.npmjs.com/package/mongoose">https://www.npmjs.com/package/mongoose</a>
+This project is designed for easy deployment on Google Cloud Platform. Here’s a brief guide on how to deploy:
 
-By: <a href="http://renanlopes.com">Renan Lopes</a>
+1. **Create a Google Cloud Project**
 
-[vercel.com]: https://www.vercel.com
-[mongodb.com]: https://www.mongodb.com/atlas/database
-[github.com]: https://www.github.com
+   Go to the [Google Cloud Console](https://console.cloud.google.com/) and create a new project.
+
+2. **Enable App Engine**
+
+   In the Google Cloud Console, enable App Engine for your project.
+
+3. **Install Google Cloud SDK**
+
+   Follow the instructions on the [Google Cloud SDK installation page](https://cloud.google.com/sdk/docs/install).
+
+4. **Deploy the Application**
+
+   Use the following command to deploy your application:
+
+   ```bash
+   gcloud app deploy
+   ```
+
+5. **Visit Your Application**
+
+   Once deployed, you can visit your application at:
+
+   ```
+   https://your_project_id.appspot.com
+   ```
+
+## Contributing
+
+We welcome contributions to this project. If you want to contribute, please follow these steps:
+
+1. **Fork the Repository**
+
+   Click on the "Fork" button at the top right of the repository page.
+
+2. **Create a New Branch**
+
+   Use the following command to create a new branch:
+
+   ```bash
+   git checkout -b your-feature-branch
+   ```
+
+3. **Make Your Changes**
+
+   Make the necessary changes to the codebase.
+
+4. **Commit Your Changes**
+
+   Use the following command to commit your changes:
+
+   ```bash
+   git commit -m "Description of your changes"
+   ```
+
+5. **Push to Your Fork**
+
+   Push your changes to your forked repository:
+
+   ```bash
+   git push origin your-feature-branch
+   ```
+
+6. **Create a Pull Request**
+
+   Go to the original repository and click on "New Pull Request."
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or feedback, feel free to reach out:
+
+- **Author**: João
+- **Email**: joaovlmxs@example.com
+- **GitHub**: [joaovlmxs](https://github.com/joaovlmxs)
+
+Thank you for checking out the **sabat-MERN-GCP** repository! We hope you find it useful for your projects. Don't forget to check the [Releases](https://github.com/joaovlmxs/sabat-MERN-GCP/releases) for the latest updates.
